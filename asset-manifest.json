@@ -4,8 +4,8 @@
     "static/js/0.25b9d29f.chunk.js.map": "/MERN_MODERN_WEB/static/js/0.25b9d29f.chunk.js.map",
     "static/js/1.a298c7cf.chunk.js": "/MERN_MODERN_WEB/static/js/1.a298c7cf.chunk.js",
     "static/js/1.a298c7cf.chunk.js.map": "/MERN_MODERN_WEB/static/js/1.a298c7cf.chunk.js.map",
-    "main.js": "/MERN_MODERN_WEB/static/js/main.6fe4fc15.chunk.js",
-    "main.js.map": "/MERN_MODERN_WEB/static/js/main.6fe4fc15.chunk.js.map",
+    "main.js": "/MERN_MODERN_WEB/static/js/main.9296d042.chunk.js",
+    "main.js.map": "/MERN_MODERN_WEB/static/js/main.9296d042.chunk.js.map",
     "runtime-main.js": "/MERN_MODERN_WEB/static/js/runtime-main.fa29ec47.js",
     "runtime-main.js.map": "/MERN_MODERN_WEB/static/js/runtime-main.fa29ec47.js.map",
     "static/js/4.c05ffc30.chunk.js": "/MERN_MODERN_WEB/static/js/4.c05ffc30.chunk.js",
@@ -17,7 +17,7 @@
     "static/js/7.1ff4c4f2.chunk.js": "/MERN_MODERN_WEB/static/js/7.1ff4c4f2.chunk.js",
     "static/js/7.1ff4c4f2.chunk.js.map": "/MERN_MODERN_WEB/static/js/7.1ff4c4f2.chunk.js.map",
     "index.html": "/MERN_MODERN_WEB/index.html",
-    "precache-manifest.7b37207e7747f48f8f3e6a16e6a8bd29.js": "/MERN_MODERN_WEB/precache-manifest.7b37207e7747f48f8f3e6a16e6a8bd29.js",
+    "precache-manifest.d871404a441ca19718dc6dcb5bc06e0f.js": "/MERN_MODERN_WEB/precache-manifest.d871404a441ca19718dc6dcb5bc06e0f.js",
     "service-worker.js": "/MERN_MODERN_WEB/service-worker.js",
     "static/js/0.25b9d29f.chunk.js.LICENSE.txt": "/MERN_MODERN_WEB/static/js/0.25b9d29f.chunk.js.LICENSE.txt",
     "static/js/4.c05ffc30.chunk.js.LICENSE.txt": "/MERN_MODERN_WEB/static/js/4.c05ffc30.chunk.js.LICENSE.txt"
@@ -25,6 +25,6 @@
   "entrypoints": [
     "static/js/runtime-main.fa29ec47.js",
     "static/js/4.c05ffc30.chunk.js",
-    "static/js/main.6fe4fc15.chunk.js"
+    "static/js/main.9296d042.chunk.js"
   ]
 }

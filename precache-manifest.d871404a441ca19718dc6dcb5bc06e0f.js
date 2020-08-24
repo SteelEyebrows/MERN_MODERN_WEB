@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "73586ac4daf8f8456c94fe8527951bf9",
+    "revision": "c1b3a35f002210f9c9d34ab508f1ae66",
     "url": "/MERN_MODERN_WEB/index.html"
   },
   {
@@ -36,8 +36,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/MERN_MODERN_WEB/static/js/7.1ff4c4f2.chunk.js"
   },
   {
-    "revision": "d86061f611fc434caed7",
-    "url": "/MERN_MODERN_WEB/static/js/main.6fe4fc15.chunk.js"
+    "revision": "142ef91dc287dec4d3dc",
+    "url": "/MERN_MODERN_WEB/static/js/main.9296d042.chunk.js"
   },
   {
     "revision": "f34c4dc9334d2190303a",
