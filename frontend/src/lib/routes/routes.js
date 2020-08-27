@@ -1,10 +1,15 @@
-import {Home,Login,Register} from 'page';
+import {Home,Map,Login,Register,Order} from 'page';
 
 
 export const routes =[
     {
-        path:'/',
+        path:'/MERN_MODERN_WEB',
         page:Home,
+        exact:true
+    },
+    {
+        path:'/map',
+        page:Map,
         exact:true
     },
     {
@@ -15,6 +20,10 @@ export const routes =[
     {
         path:'/register',
         page:Register,
+        exact:true
+    },{
+        path:'/order',
+        page:Order,
         exact:true
     }
 ]

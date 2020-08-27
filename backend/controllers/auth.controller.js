@@ -9,12 +9,11 @@ const expressJWT = require('express-jwt');
 const { errorHandler } = require('../helpers/dbErrorHandling');
 
 exports.registerController = (req,res)=>{
-    const {name,email,password} = req.body
+    const {email,password} = req.body
     const errors = validationResult(req);
     console.log(errors);
     const token = jwt.sign(
         {
-          name,
           email,
           password
         },
@@ -23,7 +22,6 @@ exports.registerController = (req,res)=>{
           expiresIn: '5m'
         }
       );
-  
       // const emailData = {
       //   from: process.env.EMAIL_FROM,
       //   to: email,
@@ -50,7 +48,26 @@ exports.registerController = (req,res)=>{
       //       errors: errorHandler(err)
       //     });
       //   });
-    
+
+      const user = new User({
+        email,
+        password
+      });
+     
+      user.save((err, user) => {
+        if (err) {
+          console.log('Save error', errorHandler(err));
+          return res.status(401).json({
+            errors: errorHandler(err)
+          });
+        } else {
+          return res.json({
+            success: true,
+            message: user,
+            message: 'Signup success'
+          });
+        }
+      });
 }
 
 exports.activationController = (req, res) => {
@@ -64,11 +81,11 @@ exports.activationController = (req, res) => {
             errors: 'Expired link. Signup again'
           });
         } else {
-          const { name, email, password } = jwt.decode(token);
+          const {  email, password } = jwt.decode(token);
   
           console.log(email);
           const user = new User({
-            name,
+            
             email,
             password
           });
@@ -130,13 +147,13 @@ exports.activationController = (req, res) => {
             expiresIn: '7d'
           }
         );
-        const { _id, name, email, role } = user;
+        const { _id,  email, role } = user;
   
         return res.json({
           token,
           user: {
             _id,
-            name,
+            
             email,
             role
           }
@@ -314,21 +331,21 @@ exports.activationController = (req, res) => {
       .verifyIdToken({ idToken, audience: process.env.GOOGLE_CLIENT })
       .then(response => {
         // console.log('GOOGLE LOGIN RESPONSE',response)
-        const { email_verified, name, email } = response.payload;
+        const { email_verified,  email } = response.payload;
         if (email_verified) {
           User.findOne({ email }).exec((err, user) => {
             if (user) {
               const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
                 expiresIn: '7d'
               });
-              const { _id, email, name, role } = user;
+              const { _id, email,  role } = user;
               return res.json({
                 token,
-                user: { _id, email, name, role }
+                user: { _id, email,  role }
               });
             } else {
               let password = email + process.env.JWT_SECRET;
-              user = new User({ name, email, password });
+              user = new User({  email, password });
               user.save((err, data) => {
                 if (err) {
                   console.log('ERROR GOOGLE LOGIN ON USER SAVE', err);
@@ -341,10 +358,10 @@ exports.activationController = (req, res) => {
                   process.env.JWT_SECRET,
                   { expiresIn: '7d' }
                 );
-                const { _id, email, name, role } = data;
+                const { _id, email,  role } = data;
                 return res.json({
                   token,
-                  user: { _id, email, name, role }
+                  user: { _id, email,  role }
                 });
               });
             }

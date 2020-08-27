@@ -5,8 +5,8 @@ class Client {
 
   constructor() {
     this.axios = axios.create({
-        baseURL: process.env.REACT_APP_API_URL,
-        timeout: process.env.REACT_APP_REQUEST_TIMEOUT,
+        baseURL: 'http://localhost:5000/api/',
+        timeout: 10000,
     });
   }
     get(path, payload = null) {

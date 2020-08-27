@@ -24,7 +24,26 @@ const HomeContainer = ({history,match}) =>{
 
       useEffect(
 		() => { 
+            let i = 1;
+        gsap.fromTo(".blob", {
+            rotation: function(index) { 
+                return index * 90; 
+            },
+            x:200, y:0.1,
 
+        },
+            {
+                rotation: function(index) { 
+                    return index * 90 + 360; 
+                },
+                x:200, y:0.1,
+                duration: 20,
+                repeat: -1,
+                yoyo:true,
+                stagger:0.1,
+
+            }
+            )
          let firstTrigger = gsap.timeline({
              scrollTrigger: {
                 trigger: firstPageOutRef.current,
@@ -34,41 +53,52 @@ const HomeContainer = ({history,match}) =>{
              }
         });
         
-        firstTrigger.to(airplainRef.current, {
-            y:500,
-            autoAlpha: 0,
-        })
-        .to('.maintitle', {
+        firstTrigger
+        .to(airplainRef.current, {
             y:-500,
-        }, 0);
+        });
 
 		let secondTrigger = gsap.timeline({
             scrollTrigger: {
-                trigger: firstPageOutRef.current,
+                trigger: '#slide--2',
                 scrub: 1,
-                start: "top bottom", // position of trigger meets the scroller position
-                end: "bottom top"
+                start: "top 100%", // position of trigger meets the scroller position
+                end: "top 20%"
             }
         })
         secondTrigger
-        .to('.doubleExposure', {
-            height:300,
+        .to('.quote__1', {
+            y:"+=200",
             ease: Sine.easeIn
         },)	
-        .to('.nomalImage', {
-            width:'20%',
+        .to('.quote__2', {
+            x:"+=200",
             ease: Sine.easeIn
         },0)
         .to('#masterTextPath', {
             attr: { startOffset: "0%" },
             ease: Sine.easeIn
         },0)			
-				
+                
+        
+        let thirdTrigger = gsap.timeline({
+            scrollTrigger: {
+                trigger: '#slide--3',
+                scrub: 1,
+                start: "top 100%", // position of trigger meets the scroller position
+                end: "top 20%"
+            }
+        })
+        thirdTrigger
+        .to(".cards li a", {
+            x: '100%',
+            stagger:{
+              each:0.5
+            }
+          });
 		},
 		[ ],
     );
-
-
    
     //-----------------------------
     const data = useSelector(mapStateToProps, []);
@@ -85,12 +115,13 @@ const HomeContainer = ({history,match}) =>{
 		let newvalueX = (pageX-window.innerWidth/2)/window.innerWidth * -100;
 		let newvalueY = (pageY-window.innerHeight/2)/window.innerHeight * -30;
 		
-		gsap.to(airplainRef.current,0.5, {backgroundPosition: `${newvalueX}px ${newvalueY}px`});
+		gsap.to(airplainRef.current,0.5, {x: newvalueX,y:newvalueY});
 	}, [x,y]);
     
     return(
         <>
             <Home 
+                history={history}
                 firstPageOutRef={firstPageOutRef}
                 handleMouseMove={handleMouseMove}
                 airplainRef={airplainRef}

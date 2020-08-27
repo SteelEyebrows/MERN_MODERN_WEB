@@ -2,9 +2,9 @@ import * as React from 'react';
 import {MainTemplate} from 'components';
 import {RegisterContainer,MenuContainer} from 'containers';
         
-const Register = () =>(
+const Register = ({history}) =>(
     <MainTemplate header={<MenuContainer />}>
-        <RegisterContainer />
+        <RegisterContainer  history={history} />
     </MainTemplate>
 );
 

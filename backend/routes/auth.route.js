@@ -1,12 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const {
-    registerController
+    registerController,
+    signinController,
 } = require('../controllers/auth.controller.js');
 const {
-    validSign
+    validSign,
+    validLogin,
 } = require('../helpers/valid')
 
-router.post('/register',registerController);
+router.post('/register',validSign,registerController);
+router.post('/login',validLogin, signinController)
 
 module.exports = router

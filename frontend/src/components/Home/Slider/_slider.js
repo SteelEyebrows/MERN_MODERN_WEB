@@ -9,22 +9,19 @@ const testimonials = [
     name: "Hawaii",
     title: "Creative Director, VISA",
     image: "https://i.pinimg.com/originals/46/9a/97/469a977dc380c94c4d4a2d14cd99f032.png",
-    quote:
-      "Hawaii"
+    quote:"Hawaii"
   },
   {
     name: "Mark Jacobs",
     title: "Sweden",
     image: "https://i.pinimg.com/originals/46/9a/97/469a977dc380c94c4d4a2d14cd99f032.png",
-    quote:
-      "Sweden"
+    quote:"Sweden"
   },
   {
     name: "Lisa Bearings",
     title: "New York",
     image: "https://i.pinimg.com/originals/46/9a/97/469a977dc380c94c4d4a2d14cd99f032.png",
-    quote:
-      "New York"
+    quote:"New York"
   }
 ];
 

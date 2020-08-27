@@ -6,6 +6,7 @@ import useStyledCursor from 'lib/hoc/useStyledCursor';
 import Cursor from '../common/Cursor';
 import First from './First';
 import Second from './Second';
+import Third from './Third';
 import Slider from 'components/Home/Slider';
 const Home = ({   
   firstPageOutRef,
@@ -36,9 +37,11 @@ const Home = ({
             enterCircle={enterCircle}
             leaveCircle={leaveCircle}
           />
-          <Slider 
-            
+          <Third
+            enterCircle={enterCircle}
+            leaveCircle={leaveCircle}
           />
+
       </StyledHome>
 		</>
     );
